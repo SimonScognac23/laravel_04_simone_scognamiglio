@@ -1,0 +1,36 @@
+/* -------------------------PAGINA WELCOME------------------------------------------------------------ */
+
+.image-container {
+    width: 100%;
+    /* Imposta la larghezza al 100% */
+    height: 400px;
+    /* Imposta un'altezza fissa per l'immagine */
+    background-color: #f0f0f0;
+    /* Colore di sfondo per vedere lo spazio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    /* Raggio angoli per renderlo più gradevole */
+    margin-top: 30px;
+    /* Distanza tra il titolo e l'immagine */
+}
+
+.image-container img {
+    max-width: 100%;
+    /* Rende l'immagine fluida */
+    max-height: 100%;
+    /* Fa sì che l'immagine non esca dallo spazio */
+    object-fit: cover;
+    /* Copre l'area senza distorcere l'immagine */
+    border-radius: 5px;
+    /* Rende gli angoli dell'immagine arrotondati */
+}
+
+
+/* Classe per cambiare il colore della navbar in rosso */
+.navbar-red {
+    background-color: red !important;
+}
+
+/*--------------------- pagina indice------------------------------------*/
