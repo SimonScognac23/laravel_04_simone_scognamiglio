@@ -60,10 +60,46 @@ class PublicController extends Controller
     }
 
 
+
+
+
+//------------------------------------- PAGINA DI CONTATTO-------------------------------------------------
+
+public function contattaci()
+{
+    // Array dei 4 giocatori NBA
+    $players = [
+        ['name' => 'LeBron James', 'surname' => 'James', 'cell' => '123-456-7890'],
+        ['name' => 'Stephen Curry', 'surname' => 'Curry', 'cell' => '234-567-8901'],
+        ['name' => 'Kevin Durant', 'surname' => 'Durant', 'cell' => '345-678-9012'],
+        ['name' => 'Kawhi Leonard', 'surname' => 'Leonard', 'cell' => '456-789-0123']
+    ];
+
+    // Passa i giocatori alla vista 'contact_us'
+    return view('contattaci', compact('players'));
 }
 
 
 
+
+
+//---------------------------------------SUBMIT INVIO DATI-------------------------------------------------------------------------
+
+
+
+//HTTP REQUEST
+// per far capire a laravel che l parametro in ingresso equivale a quello che l'utente scrive nel form, 
+// in automatico laravel fornisce una classe HTTP request, sfrutto questa classe, per prendere i dati dell utente per farci qualcosa...
+
+public function submit(Request $request) // sfruttiamo la dependency injection ossia il parametro in ingresso deve essere esattamente un oggetto di classe request
+
+{
+
+    dd($request);
+
+}
+
+}
 
 
 

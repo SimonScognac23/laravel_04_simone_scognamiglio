@@ -43,6 +43,25 @@ Route::get('/detail{id}' , [PublicController::class , 'dettaglio'] )->name('pagi
 Route::get('/index',  [PublicController::class , 'indice'] )->name('paginaIndice');
 
 
+//--------------------------------------ROTTA DI CONTATTO---------------------------------------------------------------------
+
+Route::get('/contactUs',  [PublicController::class , 'contattaci'] )->name('contact.us');
+
+
+
+
+
+
+//-------------------------------------ROTTA POST----------------------------------------------------------------
+// SERVE PER SPEDIRE DEI DATI
+
+Route::post('/contactUs/submit' , [PublicController::class , 'submit'])->name('contact.submit'); 
+// metodo della classe route
+// funzionano esattamente come le rotte get, hanno un uri,controller e funzione
+
+
+
+
 
 
 

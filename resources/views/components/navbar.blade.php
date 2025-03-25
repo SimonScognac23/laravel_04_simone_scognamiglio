@@ -23,6 +23,13 @@
                     <!-- URI per "Chi siamo" -->
                 </li>
 
+<!-- Link alla pagina "Contattaci" -->
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('contact.us') }}">Contattaci</a>
+</li>
+
+
+
             </ul>
         </div>
     </div>

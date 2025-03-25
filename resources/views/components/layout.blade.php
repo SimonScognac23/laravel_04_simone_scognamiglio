@@ -25,7 +25,13 @@
     {{-- In PHP, la variabile slot viene utilizzata principalmente in contesti come i componenti Blade in Laravel. Essa permette di definire sezioni di contenuto personalizzabili che possono essere riempite dinamicamente quando il componente viene utilizzato. È simile al concetto di "yield" nei layout Blade, ma con maggiore flessibilità. L'uso di slot consente di inserire contenuti specifici in parti di un componente, mantenendo la struttura generale, migliorando la riusabilità e la personalizzazione del componente. --}}
     
     <x-navbar></x-navbar>  {{-- serve questo tag per poter richiamare la navbar dentro il file navbar e la richiama  --}}
+
+    <dv class="contaner-fluid min-vh-100">   {{-- questa operazione è comoda se sotto abbiamo un footer e vogliamo che il footer sia in basso, ossia dare una dimensione a l div che contiene lo slot --}}
+
     {{ $slot }}
+
+    </dv>
+  
 
 
 
