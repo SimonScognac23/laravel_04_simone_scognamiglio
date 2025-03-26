@@ -6,7 +6,7 @@
     <div class="row justify-content-center align-items-center h-100">
         <div class="col-12 text-center">
             <h1 class="py-5 title">
-               Le migliori Jordan
+            GRAZIE DI AVERCI CONTATTATO
             </h1>
             <div class="image-container">
                 <img src="https://logo-marque.com/wp-content/uploads/2020/04/Air-Jordan-Embl%C3%A8me.jpg" alt="Descrizione immagine" class="img-fluid">
@@ -15,14 +15,8 @@
     </div>
 </div>
 
-  
-@if (session('status'))   <!-- messaggio che appare dopo aver inviato la mail -->
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
-@endif
+
 
 
 </x-layout> 
 <!-- @dd(Route::currentRouteName())     a partire dalla classe route fammi vedere il nome della rotta corrente! ossia (home-page) qunindi facendo dd uscira "home-page" ossia il nome della rotta -->
-

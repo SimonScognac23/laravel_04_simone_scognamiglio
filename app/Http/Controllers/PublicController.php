@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\ContactMail;
+
+use Illuminate\Support\Facades\Mail;
+
 
 class PublicController extends Controller
 
@@ -80,6 +84,16 @@ public function contattaci()
 }
 
 
+//---------------------------------------------- PAGINA THANKYOU PAGE-----------------------------------------------------------
+
+
+public function thankYou()
+{
+    return view('thankYou');
+}
+
+
+
 
 
 
@@ -95,7 +109,53 @@ public function submit(Request $request) // sfruttiamo la dependency injection o
 
 {
 
-    dd($request);
+    //dd($request)->all());
+
+
+    // devo dire alla mia variabile di salvarmi un elemento della classe request
+    $name = $request->input('username');    //quindi dell'oggetto request che mi sta arrivando prendi ciò che sta nell'input in chiave ('name') e salvalo nella variabile
+
+    $email = $request->input('email');
+
+    $usermessage = $request->input('message');
+
+    // cosi ho isolato i dati e li posso sfruttare
+
+    
+
+
+
+
+    // logica per spedire mail all'utente
+
+
+     Mail::to($email)->send(new ContactMail($name, $email, $usermessage));      // dobbiamo passargli 3 parametri perche il costruttore richiede 3 parametri che sono  $username, $useremail, $usermessage; creati nel ContactMail.php, è una dipendenza e devono una volta valorizzati inserirli per forza
+    //sfruttiamo la classe mail e da questa classe mal accediamo al metodo statico to
+    // dentro al metodo to dìinserisco la mail del destinatario
+    // $email sarebbe l'email della persona che di volta in volta ci contatta
+    // concateno il metodo send per dire quale email devo inviare a quale metodo e usero new per creare un istanza della classe 'contact-mail' per poi inviare l'email
+
+//dd('controlla la tua casella di  posta');
+
+
+
+
+
+
+
+
+// REINDIRIZZAMENTO PER L UTENTE PER FARGLI AVERE UN RISCONTRO VISIVO
+
+//                 1 REDIRECT ALLA HOME CON MESSAGGIO
+
+//return redirect()->route('paginaHomepage')->with('status', 'mail inviata con successo');;    //metodo redirect accetta il metodo della rotta e serve per reindrizzare a una ltra pagina, dopo aver inviato l'email
+   // serve per l'utente per fargli avere un riscontro visivo
+   // metodo with, il metodo with accetta come prima cosa la chiave, ossia il nome del messaggio e poi  l messaggio vero e proprio
+
+
+
+   //                2 REDIRECT A UNA PAGINA CUSTOM THANK YOU PAGE
+return redirect()->route('thankYou.page');
 
 }
 

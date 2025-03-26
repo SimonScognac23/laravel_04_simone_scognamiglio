@@ -62,6 +62,12 @@ Route::post('/contactUs/submit' , [PublicController::class , 'submit'])->name('c
 
 
 
+//---------------------------------------THANK YOU PAGE----------------------------------------------------------------------------
+
+
+Route::get('/thank-you' , [PublicController::class , 'thankYou'])->name('thankYou.page');
+
+
 
 
 

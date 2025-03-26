@@ -44,9 +44,9 @@
 
     <div class="mb-3">
       <label for="username" class="form-label fw-bold">Inserisci il tuo nome completo</label>
-      <input type="text" class="form-control border-primary" id="username" name="username">
+      <input type="text" class="form-control border-primary" id="username" name="username" required>
       <!-- L'attributo name in HTML è utilizzato per identificare un elemento, solitamente nei form, 
-        in modo che i dati vengano inviati correttamente al server quando l'utente invia il modulo. L'attributo
+        in modo che i dati vengano inviati corvrettamente al server quando l'utente invia il modulo. L'attributo
         name consente al backend di riconoscere e manipolare i dati inviati dal frontend. -->
     </div>
 
